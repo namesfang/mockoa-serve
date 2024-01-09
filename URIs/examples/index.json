@@ -1,0 +1,12 @@
+{
+  "GET": {
+    "code": 0,
+    "msg": "ok",
+    "data": []
+  },
+  "POST": {
+    "code": 0,
+    "msg": "ok",
+    "data": []
+  }
+}

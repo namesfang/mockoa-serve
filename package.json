@@ -1,0 +1,21 @@
+{
+  "name": "koa-serve",
+  "version": "1.0.0",
+  "description": "临时接口服务",
+  "main": "src/app.js",
+  "scripts": {
+    "serve": "nodemon ./src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "堪笑",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.15.0",
+    "koa-json": "^2.0.2",
+    "koa-static": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
