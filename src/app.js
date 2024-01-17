@@ -67,4 +67,4 @@ app.use(async (ctx)=> {
 })
 
 app.listen(4958);
-console.log(`Server is running(https://localhost:4958)`)
+console.log(`Server is running(http://localhost:4958)`)
