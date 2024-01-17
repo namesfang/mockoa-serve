@@ -4,10 +4,13 @@ const path = require('node:path')
 const Koa = require('koa')
 const static = require('koa-static')
 const json = require('koa-json')
+const cors = require('@koa/cors')
 
 const app = new Koa()
 
 app.use(static('./static'))
+
+app.use(cors())
 
 app.use(json({
   pretty: false,
