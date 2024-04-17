@@ -31,7 +31,7 @@ app.use(async (ctx)=> {
     ]
 
     for(const i in pieces) {
-      const filename = pieces.at(i)
+      const filename = pieces[i]
       if(fs.existsSync(filename)) {
         const stacks = require(filename);
         // 默认匹配HTTP_METHOD
@@ -47,26 +47,22 @@ app.use(async (ctx)=> {
         // 数据集中定义了默认方法或方法
         if(typeof stacks === 'function') {
           ctx.body = await stacks(ctx)
-        }
-        
-        if(typeof stacks.default === 'function') {
+        } else if(typeof stacks.default === 'function') {
           ctx.body = await stacks.default(ctx)
+        } else {
+          ctx.body = stacks
         }
-
-        ctx.body = stacks
         return
       }
     }
+    // 没有资源匹配
+    ctx.status = 404
+    ctx.body = require('../URIs/error').notFound()
   } catch (error) {
     // 没有资源匹配
     ctx.status = 500
     ctx.body = require('../URIs/error').serverError(error)
-    return
   }
-
-  // 没有资源匹配
-  ctx.status = 404
-  ctx.body = require('../URIs/error').notFound()
 })
 
 app.listen(4958);
