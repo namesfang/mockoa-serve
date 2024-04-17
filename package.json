@@ -1,7 +1,7 @@
 {
   "name": "koa-serve",
   "version": "1.0.0",
-  "description": "临时接口服务",
+  "description": "接口服务",
   "main": "src/app.js",
   "scripts": {
     "serve": "nodemon ./src/app.js",
@@ -10,6 +10,9 @@
   "keywords": [],
   "author": "堪笑",
   "license": "ISC",
+  "engines": {
+    "node": ">=14.0"
+  },
   "dependencies": {
     "@koa/cors": "^5.0.0",
     "koa": "^2.15.0",
